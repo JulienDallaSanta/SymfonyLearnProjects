@@ -1,6 +1,6 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-categories:
-  path: /categorie
-  defaults:  { _controller: App\Controller\CategorieController::catalogueCategoriesPrincipales }
+#categories:
+#  path: /categorie
+#  controller: App\Controller\CategorieController::catalogueCategoriesPrincipales

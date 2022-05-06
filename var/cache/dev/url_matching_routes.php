@@ -8,11 +8,7 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/categorie' => [
-            [['_route' => 'app_categorie', '_controller' => 'App\\Controller\\CategorieController::index'], null, null, null, false, false, null],
-            [['_route' => 'catalogueCategoriesPrincipales', '_controller' => 'App\\Controller\\CategorieController::catalogueCategoriesPrincipales'], null, null, null, false, false, null],
-            [['_route' => 'categories', '_controller' => 'App\\Controller\\CategorieController::catalogueCategoriesPrincipales'], null, null, null, false, false, null],
-        ],
+        '/categorie' => [[['_route' => 'catalogueCategoriesPrincipales', '_controller' => 'App\\Controller\\CategorieController::catalogueCategoriesPrincipales'], null, null, null, false, false, null]],
         '/defaut' => [[['_route' => 'app_defaut', '_controller' => 'App\\Controller\\DefautController::index'], null, null, null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
