@@ -459,9 +459,17 @@ class ComposerStaticInit8acaffa26f7a61b57f34dfc2dcad4815
     );
 
     public static $classMap = array (
+        'App\\Controller\\CategorieController' => __DIR__ . '/../..' . '/src/Controller/CategorieController.php',
         'App\\Controller\\DefautController' => __DIR__ . '/../..' . '/src/Controller/DefautController.php',
         'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
+        'App\\Entity\\Categorie' => __DIR__ . '/../..' . '/src/Entity/Categorie.php',
+        'App\\Entity\\Message' => __DIR__ . '/../..' . '/src/Entity/Message.php',
+        'App\\Entity\\Topic' => __DIR__ . '/../..' . '/src/Entity/Topic.php',
+        'App\\Entity\\Trait\\TimeStampableTrait' => __DIR__ . '/../..' . '/src/Entity/Trait/TimeStampableTrait.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\CategorieRepository' => __DIR__ . '/../..' . '/src/Repository/CategorieRepository.php',
+        'App\\Repository\\MessageRepository' => __DIR__ . '/../..' . '/src/Repository/MessageRepository.php',
+        'App\\Repository\\TopicRepository' => __DIR__ . '/../..' . '/src/Repository/TopicRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

@@ -90,40 +90,18 @@ class __TwigTemplate_758667aedb87d6af228068e7c039803e extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/JulienDALLASANTA(DEF/Symfony/formation/src/Controller/CategorieController.php", 0), "html", null, true);
-        echo "\">src/Controller/CategorieController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/Users/JulienDALLASANTA(DEF/Symfony/formation/templates/categorie/index.html.twig", 0), "html", null, true);
-        echo "\">templates/categorie/index.html.twig</a></code></li>
-    </ul>
-</div>
-
+";
+        // line 13
+        echo "
+";
+        // line 20
+        echo "
 ";
         // line 21
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 21, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 22
-            echo "<div>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "titre", [], "any", false, false, false, 22), "html", null, true);
-            echo "</div>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["manager"]) || array_key_exists("manager", $context) ? $context["manager"] : (function () { throw new RuntimeError('Variable "manager" does not exist.', 21, $this->source); })()));
+        echo "
+";
+        // line 25
         echo "
 ";
         
@@ -146,7 +124,7 @@ class __TwigTemplate_758667aedb87d6af228068e7c039803e extends Template
 
     public function getDebugInfo()
     {
-        return array (  127 => 24,  118 => 22,  114 => 21,  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 25,  101 => 21,  98 => 20,  95 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -161,19 +139,20 @@ class __TwigTemplate_758667aedb87d6af228068e7c039803e extends Template
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{#<div class=\"example-wrapper\">#}
+{#    <h1>Hello {{ controller_name }}! ✅</h1>#}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/Users/JulienDALLASANTA(DEF/Symfony/formation/src/Controller/CategorieController.php'|file_link(0) }}\">src/Controller/CategorieController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/Users/JulienDALLASANTA(DEF/Symfony/formation/templates/categorie/index.html.twig'|file_link(0) }}\">templates/categorie/index.html.twig</a></code></li>
-    </ul>
-</div>
+{#    This friendly message is coming from:#}
+{#    <ul>#}
+{#        <li>Your controller at <code><a href=\"{{ 'C:/Users/JulienDALLASANTA(DEF/Symfony/formation/src/Controller/CategorieController.php'|file_link(0) }}\">src/Controller/CategorieController.php</a></code></li>#}
+{#        <li>Your template at <code><a href=\"{{ 'C:/Users/JulienDALLASANTA(DEF/Symfony/formation/templates/categorie/index.html.twig'|file_link(0) }}\">templates/categorie/index.html.twig</a></code></li>#}
+{#    </ul>#}
+{#</div>#}
 
-{% for entity in entities %}
-<div>{{ entity.titre }}</div>
-    {% endfor %}
+{{ dump(manager) }}
+{#{% for entity in entities %}#}
+{#<div>{{ entity.titre }}</div>#}
+{#    {% endfor %}#}
 
 {% endblock %}
 ", "categorie/index.html.twig", "C:\\Users\\JulienDALLASANTA(DEF\\Symfony\\formation\\templates\\categorie\\index.html.twig");

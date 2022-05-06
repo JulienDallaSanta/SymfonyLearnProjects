@@ -22,10 +22,14 @@ class CategorieController extends AbstractController
 
     #[Route('/categorie', name: 'catalogueCategoriesPrincipales')]
     public function catalogueCategoriesPrincipales(ManagerRegistry $doctrine){
-        $em = $doctrine->getManager('Categorie');
-        $entities = $em->getRepository('Categorie', 'Categorie')->listCategoriesPrincipales();
+        $manager = $doctrine->getManager('Categorie');
+//        $em = $doctrine->getManager( 'Categorie');
+//        $entities = $em->getRepository('Categorie', 'Categorie')->listCategoriesPrincipales();
 
-        return $this->render('categorie/index.html.twig', ['entities'=> $entities,] );
+        return $this->render('categorie/index.html.twig', [
+            //'entities'=> $entities,
+            'manager' => $manager,
+            ] );
     }
 
 }
