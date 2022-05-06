@@ -22,7 +22,7 @@ class CategorieController extends AbstractController
 
     #[Route('/categorie', name: 'catalogueCategoriesPrincipales')]
     public function catalogueCategoriesPrincipales(ManagerRegistry $doctrine){
-        $manager = $doctrine->getManager('Categorie');
+        $manager = $doctrine->getManager('categorie');
 //        $em = $doctrine->getManager( 'Categorie');
 //        $entities = $em->getRepository('Categorie', 'Categorie')->listCategoriesPrincipales();
 
