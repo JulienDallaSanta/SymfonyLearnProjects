@@ -50,7 +50,7 @@ class CategorieRepository extends ServiceEntityRepository
      /**
       * @return Categorie[] Returns an array of Categorie objects
       */
-    public function listCategoriesPrincipales()
+    public function listeCategoriesPrincipales():array
     {
         return $this->createQueryBuilder('c')
             ->select('* FROM Categorie')
