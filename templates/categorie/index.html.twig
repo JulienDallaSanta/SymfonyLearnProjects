@@ -6,6 +6,8 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body{ font-family: Arial, serif; }
+    .category{ margin-bottom: 2rem; }
 </style>
 
 {#<div class="example-wrapper">#}
@@ -18,9 +20,14 @@
 {#    </ul>#}
 {#</div>#}
 
-{{ dump(entities) }}
-{#{% for entity in entities %}#}
-{#<div>{{ entity.titre }}</div>#}
-{#    {% endfor %}#}
+{#{{ dump(entities) }}#}
+    <h1>Catégories :</h1>
+    {% for entity in entities %}
+        <li class="category">
+            <a href="/categorie/{{ entity.id }}" style="color:royalblue; text-decoration: none; font-size: 1.5rem; font-weight: bold;">{{ entity.titre }}</a>
+            <ul><li style="list-style: none;">{{ entity.description }}</li></ul>
+        </li>
+
+    {% endfor %}
 
 {% endblock %}
