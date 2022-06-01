@@ -53,6 +53,7 @@ class Topic
 
     /**
      * @return Collection<int, Message>
+     * @ORM\OrderBy({"id" = "ASC"})
      */
     public function getMessages(): Collection
     {
