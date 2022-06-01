@@ -52,14 +52,25 @@ class CategorieRepository extends ServiceEntityRepository
       */
     public function listeCategoriesPrincipales():array
     {
-        return $this->createQueryBuilder('c')
-            ->select('* FROM Categorie')
-            ->andWhere('categorie.parent = NULL')
-            ->orderBy('c.id', 'ASC')
+        return $this->createQueryBuilder('categorie')
+//            ->select('categorie')
+            ->andWhere('categorie.parent IS NULL')
+            ->orderBy('categorie.id', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
+
+//    public function findCategorieById($id): ?Categorie
+//    {
+//        return $this->createQueryBuilder('categorie')
+//            ->select('categorie')
+//            ->andWhere('categorie.id = id')
+//            ->orderBy('categorie.id', 'ASC')
+//            ->getQuery()
+//            ->getResult()
+//            ;
+//    }
 
 //    /**
 //     * @return Categorie[] Returns an array of Categorie objects
