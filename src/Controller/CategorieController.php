@@ -6,6 +6,7 @@ use App\Repository\CategorieRepository;
 use App\Entity\Categorie;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\AbstractManagerRegistry;
@@ -27,14 +28,29 @@ class CategorieController extends AbstractController
         $this->repository = $repository;
     }
 
-    #[Route('/categorie', name: 'catalogueCategoriesPrincipales')]
+    #[Route('/categories', name: 'catalogueCategoriesPrincipales')]
     public function catalogueCategoriesPrincipales(){
         $entities = $this->repository->listeCategoriesPrincipales();
 
         return $this->render('categorie/index.html.twig', [
             'entities'=> $entities,
-//            'manager' => $manager,
-            ] );
+            ]);
+    }
+
+    #[Route('/categorie/{id}', name: 'showCategorie')]
+    public function showCategorie($id):Response{
+        $category = $this->repository->find($id);
+        if(!$category){
+            throw new NotFoundHttpException(); //erreur 404
+        }else{
+            if($id){
+                return $this->render('categorie/categorie.html.twig', [
+                    'category'=> $category,
+                ]);
+            }
+        }
+
+
     }
 
 }
