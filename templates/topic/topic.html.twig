@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ topic.id }}!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .separator{ width: 100%; height: 1px; color: black; }
+    span{ margin-left: 1rem; }
+</style>
+    <h2>{{ topic.titre }}</h2>
+    <p>Catégorie : <a href="/categorie/{{ topic.categorie.id }}">{{ topic.categorie.titre }}</a></p>
+    <p>Créé le : {{ topic.createdAt|date("d/m/Y H:i") }}</p>
+    <p>Modifié le : {{ topic.updatedAt|date("d/m/Y H:i") }}</p>
+    <div class="separator"></div>
+
+    {% if topic.messages|length>0 %}
+        <h2>Messages</h2>
+        {% for message in messages %}
+            <p>Message n°{{ loop.index }} du {{ topic.titre }}</p>
+            <span>- créé le : {{ message.createdAt|date("d/m/Y H:i") }} (modifié le: {{ message.updatedAt|date("d/m/Y H:i") }})</span>
+        {% endfor %}
+    {% else %}
+    <p>Ce topic n'a pas de messages</p>
+    {% endif %}
+
+
+{% endblock %}
